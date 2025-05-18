@@ -1,7 +1,6 @@
 package com.example;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -34,12 +33,16 @@ public class Employee {
     @Lob
     @Column(columnDefinition = "MEDIUMTEXT")
     private String employeeDesription;
+
     @Transient
     private double employeeSalary;
+
     @Enumerated(EnumType.STRING)
     private EmployeeStatus employeeStatus;
+
     @CreationTimestamp
     private LocalDateTime createdDateTime;
+
     @UpdateTimestamp
     private LocalDateTime updatedDateTime;
 }
